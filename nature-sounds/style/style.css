@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #000000;
+}
+
+header,
+footer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+header div,
+footer div {
+  margin: 0 5% 0 5%;
+}
+
+.logo-bird {
+  width: 60px;
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  display: inline;
+  margin: 0 10px 0 10px;
+}
+
+.nav button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Neucha", "Arial", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  transition-duration: 0.3s;
+}
+
+.nav button:hover {
+  transform: scale(1.2);
+  color: #bdae82;
+}
+
+.nav button:active {
+  transform: scale(1.1);
+}
+
+main .main-image {
+  width: 100%;
+  height: 80vh;
+  background-image: url("../assets/img/solovey.jpg");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-button {
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  background-image: url("../assets/svg/play.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  transition-duration: 0.1s;
+}
+
+.audio-button:active {
+  transform: scale(0.9);
+}
+
+footer {
+  height: 9vh;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  align-items: center;
+}
+
+.school-logo {
+  height: 40px;
+  transition: 0.3s;
+}
+
+.school-logo:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+footer div span,
+footer div span a {
+  color: #ffffff;
+  font-family: "Arial", "Helvetica", sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+footer div span a:hover {
+  color: #bdae82;
+}
+
+footer div span {
+  margin: 0 5px 0 5px;
+}
+
+/* --- JS events --- */
+
+.audio-button.pause {
+  background-image: url("../assets/svg/pause.svg");
+  animation: pause ease-in-out;
+  animation-duration: 0.3s;
+  animation-direction: normal;
+}
+
+.audio-button {
+  animation: play ease-in-out;
+  animation-duration: 0.3s;
+  animation-direction: normal;
+}
+
+@keyframes pause {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes play {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-bird.active {
+  transform: scale(1.2);
+  color: #bdae82;
+}
+
+.logo-bird.pause {
+  animation: birdAnim 5s infinite;
+}
+
+@keyframes birdAnim {
+  from {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg)
+      brightness(92%) contrast(87%);
+  }
+  25% {
+    filter: invert(66%) sepia(10%) saturate(2385%) hue-rotate(7deg)
+      brightness(93%) contrast(85%);
+  }
+  50% {
+    filter: invert(71%) sepia(49%) saturate(669%) hue-rotate(356deg)
+      brightness(107%) contrast(88%);
+  }
+  75% {
+    filter: invert(39%) sepia(55%) saturate(585%) hue-rotate(8deg)
+      brightness(99%) contrast(99%);
+  }
+  to {
+    filter: invert(27%) sepia(77%) saturate(1490%) hue-rotate(349deg)
+      brightness(94%) contrast(89%);
+  }
+}
